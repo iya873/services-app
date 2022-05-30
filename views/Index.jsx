@@ -15,7 +15,9 @@ const containerStyle = {
 const cardStyle = {
     width: '22vw',
     height: '45vh',
-    border: 'none'
+    border: 'none',
+    borderRadius: '22px',
+    backgroundColor: 'orange'
 }
 
 const bookStyle = {
@@ -26,6 +28,7 @@ const bookStyle = {
     height: '50px'
 }
 
+
 class Index extends React.Component {
     render() {
         return (
@@ -33,10 +36,10 @@ class Index extends React.Component {
                 <h1 style={titleStyle}>Services by <em>Sweet Ambiance</em></h1><br />
                 <button style={bookStyle}>Book Me</button>
                 <div style={containerStyle} className='divContainer'>
-                    <button style={cardStyle} className='serviceCard'>Face</button>
-                    <button style={cardStyle} className='serviceCard'>Body</button>
-                    <button style={cardStyle} className='serviceCard'>Waxing</button>
-                    <button style={cardStyle} className='serviceCard'>Products</button>
+                    <button style={cardStyle} className='serviceCard'><a href='/services/face'>Face</a></button>
+                    <button style={cardStyle} className='serviceCard'><a href='/services/body'>Body</a></button>
+                    <button style={cardStyle} className='serviceCard'><a href='/services/waxing'>Waxing</a></button>
+                    <button style={cardStyle} className='serviceCard'><a href='/services/products'>Products</a></button>
                 </div>
             </>
         )
