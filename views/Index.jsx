@@ -1,5 +1,6 @@
 const React = require('react')
 
+
 var titleStyle = {
     textAlign: 'center',
     color: 'blue'
@@ -34,7 +35,7 @@ class Index extends React.Component {
         return (
             <>
                 <h1 style={titleStyle}>Services by <em>Sweet Ambiance</em></h1><br />
-                <button style={bookStyle}>Book Me</button>
+                <button className="hover: bg-red-500" style={bookStyle}>Book Me</button>
                 <div style={containerStyle} className='divContainer'>
                     <button style={cardStyle} className='serviceCard'><a href='/services/face'>Face</a></button>
                     <button style={cardStyle} className='serviceCard'><a href='/services/body'>Body</a></button>
