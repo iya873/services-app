@@ -1,5 +1,5 @@
 const React = require('react')
-
+const Services = require('../models/services')
 
 var titleStyle = {
     textAlign: 'center',
@@ -10,7 +10,7 @@ const containerStyle = {
     display: 'flex',
     justifyContent: 'space-evenly',
     position: 'relative',
-    top: '180px',
+    top: '300px',
 }
 
 const cardStyle = {
@@ -23,7 +23,7 @@ const cardStyle = {
 
 const bookStyle = {
     position: 'relative',
-    left: '35%',
+    left: '45%',
     top: '150px',
     width: '250px',
     height: '50px'
@@ -32,15 +32,17 @@ const bookStyle = {
 
 class Index extends React.Component {
     render() {
+        const { Services } = this.props;
         return (
             <>
                 <h1 style={titleStyle}>Services by <em>Sweet Ambiance</em></h1><br />
-                <button className="hover: bg-red-500" style={bookStyle}>Book Me</button>
+                <button style={bookStyle}>Book Me</button>
                 <div style={containerStyle} className='divContainer'>
-                    <button style={cardStyle} className='serviceCard'><a href='/services/face'>Face</a></button>
-                    <button style={cardStyle} className='serviceCard'><a href='/services/body'>Body</a></button>
-                    <button style={cardStyle} className='serviceCard'><a href='/services/waxing'>Waxing</a></button>
-                    <button style={cardStyle} className='serviceCard'><a href='/services/products'>Products</a></button>
+                    {Services.map((Services, props) => {
+                        return (
+                            <button style={cardStyle}><a href={`/services/${Services.type}`}><h3>{ Services.type }</h3></a></button>
+                        )
+                    })}
                 </div>
             </>
         )
